@@ -102,7 +102,7 @@ bool HelloAgora::init()
 
     // create and initialize a label
 
-    auto label = Label::createWithTTF(AgoraRtcEngineForGaming_getVersion(), "fonts/Marker Felt.ttf", 24);
+    auto label = Label::createWithTTF(AgoraRtcEngineForGaming_getInstance(AGORA_APP_ID)->getVersion(), "fonts/Marker Felt.ttf", 24);
 
     // position the label on the center of the screen
     label->setPosition(Vec2(origin.x + visibleSize.width / 2,
@@ -174,7 +174,7 @@ bool HelloAgora::init()
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
 
-    AgoraRtcEngineForGaming_getInstance()->setEventHandler(new MyIGamingRtcEngineEventHandler(this));
+    AgoraRtcEngineForGaming_getInstance(AGORA_APP_ID)->setEventHandler(new MyIGamingRtcEngineEventHandler(this));
 
     scheduleUpdate();
 
@@ -183,7 +183,7 @@ bool HelloAgora::init()
 
 void HelloAgora::update(float delta)
 {
-    AgoraRtcEngineForGaming_getInstance()->poll();
+    AgoraRtcEngineForGaming_getInstance(AGORA_APP_ID)->poll();
 }
 
 void HelloAgora::updateMsgContent(const std::string& msg)
@@ -193,7 +193,7 @@ void HelloAgora::updateMsgContent(const std::string& msg)
 
 void HelloAgora::onLeaveChannelClicked()
 {
-    AgoraRtcEngineForGaming_getInstance()->leaveChannel();
+    AgoraRtcEngineForGaming_getInstance(AGORA_APP_ID)->leaveChannel();
 }
 
 void HelloAgora::onJoinChannelClicked()
@@ -202,7 +202,7 @@ void HelloAgora::onJoinChannelClicked()
         return;
     }
 
-    auto rtcEngine = AgoraRtcEngineForGaming_getInstance();
+    auto rtcEngine = AgoraRtcEngineForGaming_getInstance(AGORA_APP_ID);
     rtcEngine->setChannelProfile(CHANNEL_PROFILE_GAME_FREE_MODE);
     rtcEngine->joinChannel(mChannelEditBox->getText(), "Cocos2d", 0);
 }

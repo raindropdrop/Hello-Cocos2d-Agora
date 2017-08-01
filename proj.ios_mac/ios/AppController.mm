@@ -28,8 +28,6 @@
 #import "AppDelegate.h"
 #import "RootViewController.h"
 
-#import <AgoraAudioKit/AgoraRtcEngineKitForGaming.h>
-
 @implementation AppController
 
 @synthesize window;
@@ -40,13 +38,7 @@
 // cocos2d application instance
 static AppDelegate s_sharedApplication;
 
-// PLEASE KEEP THIS App ID IN SAFE PLACE -->
-// Get your own App ID at https://dashboard.agora.io/ -->
-static NSString *appId = <#Your App Id#>;
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-    AgoraRtcEngineKitForGaming *rtcEngine = [AgoraRtcEngineKitForGaming sharedEngineWithAppId:appId delegate:nil];
 
     cocos2d::Application *app = cocos2d::Application::getInstance();
     

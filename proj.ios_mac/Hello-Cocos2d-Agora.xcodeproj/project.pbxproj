@@ -28,6 +28,9 @@
 		2F1F05E21E729CD300244919 /* TextBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F1F05DA1E729CD300244919 /* TextBox.png */; };
 		2F492EE21E9FA9CD007E4203 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F492EE11E9FA9CD007E4203 /* libresolv.tbd */; };
 		2F6527E01EA8BA99002CDBF0 /* AgoraAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F6527DF1EA8BA99002CDBF0 /* AgoraAudioKit.framework */; };
+		2F71DBD81F30821B008131FD /* libagoraSdkCWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F71DBD61F308150008131FD /* libagoraSdkCWrapper.a */; };
+		2F71DBDA1F308232008131FD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F71DBD91F308231008131FD /* CoreMedia.framework */; };
+		2F71DBDC1F308306008131FD /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F71DBDB1F308306008131FD /* CoreVideo.framework */; };
 		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		3EACC99019EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
@@ -141,6 +144,9 @@
 		2F1F05F61E72CBF100244919 /* AgoraAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AgoraAudioKit.framework; path = ../AgoraGamingSDK/libs/iOS/AgoraAudioKit.framework; sourceTree = "<group>"; };
 		2F492EE11E9FA9CD007E4203 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/lib/libresolv.tbd; sourceTree = DEVELOPER_DIR; };
 		2F6527DF1EA8BA99002CDBF0 /* AgoraAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AgoraAudioKit.framework; path = ../AgoraGamingSDK/libs/iOS/AgoraAudioKit.framework; sourceTree = "<group>"; };
+		2F71DBD61F308150008131FD /* libagoraSdkCWrapper.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libagoraSdkCWrapper.a; path = ../AgoraGamingSDK/libs/iOS/libagoraSdkCWrapper.a; sourceTree = "<group>"; };
+		2F71DBD91F308231008131FD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
+		2F71DBDB1F308306008131FD /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreVideo.framework; sourceTree = DEVELOPER_DIR; };
 		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		46880B7619C43A67006E1F66 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
 		46880B7719C43A67006E1F66 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
@@ -199,6 +205,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F71DBDC1F308306008131FD /* CoreVideo.framework in Frameworks */,
+				2F71DBDA1F308232008131FD /* CoreMedia.framework in Frameworks */,
+				2F71DBD81F30821B008131FD /* libagoraSdkCWrapper.a in Frameworks */,
 				2F492EE21E9FA9CD007E4203 /* libresolv.tbd in Frameworks */,
 				2F1F05CD1E729B6700244919 /* CoreTelephony.framework in Frameworks */,
 				294D0D641D0D56D500F7F5D4 /* CoreText.framework in Frameworks */,
@@ -293,6 +302,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2F71DBDB1F308306008131FD /* CoreVideo.framework */,
+				2F71DBD91F308231008131FD /* CoreMedia.framework */,
+				2F71DBD61F308150008131FD /* libagoraSdkCWrapper.a */,
 				2F492EE11E9FA9CD007E4203 /* libresolv.tbd */,
 				2F1F05F61E72CBF100244919 /* AgoraAudioKit.framework */,
 				2F1F05CC1E729B6700244919 /* CoreTelephony.framework */,
@@ -624,14 +636,14 @@
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../AgoraGamingSDK/libs/iOS\"";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.agora.gaming.cocos2d;
-				PROVISIONING_PROFILE = "a1037fd5-29b7-4531-a19c-8f37f2f15489";
-				PROVISIONING_PROFILE_SPECIFIER = "AgoraIODev2016+";
+				PROVISIONING_PROFILE = "87f6e50f-6472-4e90-a6d4-f19c7bd21f23";
+				PROVISIONING_PROFILE_SPECIFIER = AgoraIODev2017;
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -662,14 +674,14 @@
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../AgoraGamingSDK/libs/iOS\"";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.agora.gaming.cocos2d;
-				PROVISIONING_PROFILE = "e2c40d34-a180-447e-8c83-9be2f3c55c87";
-				PROVISIONING_PROFILE_SPECIFIER = AgoraIODistribution;
+				PROVISIONING_PROFILE = "87f6e50f-6472-4e90-a6d4-f19c7bd21f23";
+				PROVISIONING_PROFILE_SPECIFIER = AgoraIODev2017;
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
